@@ -26,10 +26,9 @@ function App() {
 
   // handle input change
   const handleInputChange = (e, index) => {
-    console.log(e.value);
     const { name, value } = e;
     const list = [...inputList];
-    console.log(list[index][name]);
+
     list[index][name] = value;
     setInputList(list);
     let amt = 0;
