@@ -30,7 +30,9 @@ function App() {
     const list = [...inputList];
 
     list[index][name] = value;
+
     setInputList(list);
+
     let amt = 0;
     if (list.length > 0) {
       const x = list.map((value) => {
