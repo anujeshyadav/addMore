@@ -90,19 +90,9 @@ function App() {
                   <Col lg="4" md="4" sm="6">
                     <Select
                       name="itemName"
-                      // value={selectedOption}
                       onChange={(e) => handleInputChange(e, i)}
-                      // onChange={handleChange}
                       options={options}
                     />
-
-                    {/* <input
-                      className="form-control my-1"
-                      name="itemName"
-                      placeholder="Item Name"
-                      value={x.itemName}
-                      onChange={(e) => handleInputChange(e.target, i)}
-                    /> */}
                   </Col>
                   <Col lg="2" md="2" sm="2">
                     <input
@@ -141,7 +131,6 @@ function App() {
                         placeholder={x.Quantity * x.Rate}
                         value={x.Quantity * x.Rate}
                         onSelectCapture={(e) => handleInputChange(e.target, i)}
-                        // onSelect={(e) => handleInputChange(e.target, i)}
                       />
                     </InputGroup>
                   </Col>
