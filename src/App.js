@@ -23,14 +23,14 @@ function App() {
     { value: "Item E", label: "Item E", name: "itemName" },
     { value: "Item F", label: "Item F", name: "itemName" },
   ];
-
+  const blockInvalidChar = (e) =>
+    ["e", "E", "+", "-"].includes(e.key) && e.preventDefault();
   // handle input change
   const handleInputChange = (e, index) => {
+    console.log(e);
     const { name, value } = e;
     const list = [...inputList];
-
     list[index][name] = value;
-
     setInputList(list);
 
     let amt = 0;
@@ -97,7 +97,9 @@ function App() {
                   </Col>
                   <Col lg="2" md="2" sm="2">
                     <input
+                      onKeyDown={blockInvalidChar}
                       type="number"
+                      min="0"
                       className="form-control my-1"
                       name="Quantity"
                       placeholder="Quantity"
@@ -111,6 +113,8 @@ function App() {
                         <span>&#8377;</span>
                       </InputGroupText>
                       <input
+                        min="0"
+                        onKeyDown={blockInvalidChar}
                         type="number"
                         className="form-control "
                         name="Rate"
